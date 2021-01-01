@@ -50,134 +50,30 @@
                     <div class="col-md-3 lista w-50">
                         <h4>Categorias</h4>
 
-                        <ul>
-                            <li onmouseover="mudaEstilo2()" onclick="exibirCategoria('todos')">Todos</li>
-                            <li onmouseover="mudaEstilo2()" onclick="exibirCategoria('computadores')">Computadores</li>
-                            <li onmouseover="mudaEstilo2()" onclick="exibirCategoria('notebooks')">Notebooks</li>
-                            <li onmouseover="mudaEstilo2()" onclick="exibirCategoria('videogames')">Videogames</li>
-                            <li onmouseover="mudaEstilo2()" onclick="exibirCategoria('acessorios')">Acessórios</li>
-                        </ul>
+                        <ul id="listaCategoria" class="list-group lista">
+                            <li class="list-group-item active border">Todos</li>
+                            <li class="list-group-item">Computadores</li>
+                            <li class="list-group-item">Notebooks</li>
+                            <li class="list-group-item">Videogames</li>
+                            <li class="list-group-item">Acessórios</li>
+                        </ul>  
                     </div>
 
                     <div id="container" class="todos">
 
-                        <div class="card border-0" style="max-width: 16rem;">
-                            <img class="card-img-top" onclick="abreImg()" src="images/pc.jpg" class="img-fluid">
-                            <div class="card-body">
-                              <p class="card-text border-bottom">Pc Gamer G-Fire Htg-686 A6 7480 8Gb <br> (Radeon R5 2Gb) SSD 240Gb monitor 18"</p>
-                              <p><del>R$ 4199</del></p>
-                              <p class="preco_descontado">R$ 3499</p>
-                            </div>
-                        </div>
+                        <% for(var i = 0; i < produtos.length; i++) { %>
 
-                        <div class="card border-0" style="max-width: 16rem;">
-                            <img class="card-img-top" onclick="abreImg()" src="images/note.jpg" class="img-fluid">
-                            <div class="card-body">
-                              <p class="card-text border-bottom">Notebook Gamer Lenovo Intel Core i7-9750H 8GB 1TB <br> Placa GTX 1050 15,6"
-                                Windows 10 L340</p>
-                                <p><del>R$ 4399</del></p>
-                                <p class="preco_descontado">R$ 3899</p>
+                            <div class="card border-0" style="max-width: 16rem;">
+                                <img class="card-img-top" onclick="abreImg()" src=<%= produtos[i].imagem %> />
+                                <div class="card-body">
+                                  <p class="card-text border-bottom"><%= produtos[i].descricao %></p>
+                                  <p><del><%= produtos[i].preco %></del></p>
+                                  <p class="preco_descontado"><%= produtos[i].preco_venda %></p>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="card border-0" style="max-width: 16rem;">
-                            <img class="card-img-top" onclick="abreImg()" src="images/ps5.jpg" class="img-fluid">
-                            <div class="card-body">
-                              <p class="card-text border-bottom">Console Playstation 5 <br> SSD 1 TB, 1 controle</p>
-                              <p><del>R$ 4999</del></p>
-                              <p class="preco_descontado">R$ 4499</p>
-                            </div>
-                        </div>
-
-                        <div class="card border-0" style="max-width: 16rem;">
-                            <img class="card-img-top" onclick="abreImg()" src="images/teclado_mecanico.jpg" style="width: 170px;" class="img-fluid">
-                            <div class="card-body">
-                              <p class="card-text border-bottom">Teclado Mecânico Gamer Redragon Kala RGB, Switch Red, ABNT-2, K557RGB</p>
-                              <p><del>R$ 159</del></p>
-                              <p class="preco_descontado">R$ 119</p>
-                            </div>
-                        </div>
-
-                        <div class="card border-0" style="max-width: 16rem;">
-                            <img class="card-img-top" onclick="abreImg()" src="images/xsx.jpg" class="img-fluid">
-                            <div class="card-body">
-                              <p class="card-text border-bottom">Console Xbox Series X <br> SSD 1 TB, 1 controle</p>
-                              <p><del>R$ 4999</del></p>
-                              <p class="preco_descontado">R$ 4499</p>
-                            </div>
-                        </div>
-
-                        <div class="card border-0" style="max-width: 16rem;">
-                            <img class="card-img-top" onclick="abreImg()" src="images/mouse.jpg" style="width: 180px;" class="img-fluid">
-                            <div class="card-body">
-                              <p class="card-text border-bottom">Mouse Gamer Redragon Ranger Black RGB 12400dpi M910-RGB</p>
-                              <p><del>R$ 159</del></p>
-                              <p class="preco_descontado">R$ 99</p>
-                            </div>
-                        </div>             
-                    </div>
-
-                    <div id="container" class="computadores" style="display: none;">
-                        <div class="card border-0" style="max-width: 16rem;">
-                            <img class="card-img-top" onclick="abreImg()" src="images/pc.jpg" class="img-fluid">
-                            <div class="card-body">
-                              <p class="card-text border-bottom">Pc Gamer G-Fire Htg-686 A6 7480 8Gb <br> (Radeon R5 2Gb) SSD 240Gb monitor 18"</p>
-                              <p><del>R$ 4199</del></p>
-                              <p class="preco_descontado">R$ 3499</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="container" class="notebooks" style="display: none;">
-                        <div class="card border-0" style="max-width: 16rem;">
-                            <img class="card-img-top" onclick="abreImg()" src="images/note.jpg" class="img-fluid">
-                            <div class="card-body">
-                              <p class="card-text border-bottom">Notebook Gamer Lenovo Intel Core i7-9750H 8GB 1TB <br> Placa GTX 1050 15,6"
-                                Windows 10 L340</p>
-                                <p><del>R$ 4399</del></p>
-                                <p class="preco_descontado">R$ 3899</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="container" class="videogames" style="display: none;">
-                        <div class="card border-0 pt-5" style="max-width: 16rem;">
-                            <img class="card-img-top" onclick="abreImg()" src="images/ps5.jpg" class="img-fluid">
-                            <div class="card-body">
-                              <p class="card-text border-bottom">Console Playstation 5 <br> SSD 1 TB, 1 controle</p>
-                              <p><del>R$ 4999</del></p>
-                              <p class="preco_descontado">R$ 4499</p>
-                            </div>
-                        </div>
-
-                        <div class="card border-0 pt-1" style="max-width: 16rem;">
-                            <img class="card-img-top" onclick="abreImg()" src="images/xsx.jpg" class="img-fluid">
-                            <div class="card-body">
-                              <p class="card-text border-bottom">Console Xbox Series X <br> SSD 1 TB, 1 controle</p>
-                              <p><del>R$ 4999</del></p>
-                              <p class="preco_descontado">R$ 4499</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="container" class="acessorios" style="display: none;">
-                        <div class="card border-0" style="max-width: 16rem;">
-                            <img class="card-img-top" onclick="abreImg()" src="images/teclado_mecanico.jpg" style="width: 170px;" class="img-fluid">
-                            <div class="card-body">
-                              <p class="card-text border-bottom">Teclado Mecânico Gamer Redragon Kala RGB, Switch Red, ABNT-2, K557RGB</p>
-                              <p><del>R$ 159</del></p>
-                              <p class="preco_descontado">R$ 119</p>
-                            </div>
-                        </div>
-
-                        <div class="card border-0" style="max-width: 16rem;">
-                            <img class="card-img-top" onclick="abreImg()" src="images/mouse.jpg" style="width: 180px;" class="img-fluid">
-                            <div class="card-body">
-                              <p class="card-text border-bottom">Mouse Gamer Redragon Ranger Black RGB 12400dpi M910-RGB</p>
-                              <p><del>R$ 159</del></p>
-                              <p class="preco_descontado">R$ 99</p>
-                            </div>
-                        </div>   
+            
+                        <% } %>
+           
                     </div>
                 </div>
             </div>

@@ -11,7 +11,7 @@ app.set('views', './app/views') // acessa do nivel do app.js
 
 consign()
 	.include('./app/routes')
-/*	.then('config/db_connection.js') */
+	.then('config/db_connection.js')
 	.then('app/models')
 	.into(app)  // include das rotas no consign
 

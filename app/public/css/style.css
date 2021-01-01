@@ -14,6 +14,13 @@ header .logo {
     color: white;
 }
 
+.jumbotron h3 {
+    -webkit-text-stroke-width: 2.5px;
+    -webkit-text-stroke-color: #000;
+    font-size: 3em;
+    color: #d8d2ca;
+}
+
 #boas_vindas img {
     animation-name: opacidade;
     animation-duration: 4s;
@@ -71,7 +78,7 @@ footer ul {
 /* Página de produtos */
 
 #container {
-    width: 90%;
+    width: 60%;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -89,14 +96,12 @@ footer ul {
 }
 
 .lista {
-    width: 20%;
+    margin-top: 50px;
     height: 25%;
-    margin: 60px;
 }
 
 .lista ul li {
-    list-style: disc;
-    margin: 10px;
+    margin: 1.5px;
     cursor: pointer;
     padding-left: 10px;
 }

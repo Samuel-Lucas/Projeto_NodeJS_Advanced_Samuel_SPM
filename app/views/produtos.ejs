@@ -51,19 +51,19 @@
                         <h4>Categorias</h4>
 
                         <ul id="listaCategoria" class="list-group lista">
-                            <li class="list-group-item active border">Todos</li>
-                            <li class="list-group-item">Computadores</li>
-                            <li class="list-group-item">Notebooks</li>
-                            <li class="list-group-item">Videogames</li>
-                            <li class="list-group-item">Acessórios</li>
+                            <li class="list-group-item active border" onclick="exibirCategoria(event, 'todos')">Todos</li>
+                            <li class="list-group-item" onclick="exibirCategoria(event, 'computadores')">Computadores</li>
+                            <li class="list-group-item" onclick="exibirCategoria(event, 'notebooks')">Notebooks</li>
+                            <li class="list-group-item" onclick="exibirCategoria(event, 'videogames')">Videogames</li>
+                            <li class="list-group-item" onclick="exibirCategoria(event, 'acessorios')">Acessórios</li>
                         </ul>  
                     </div>
 
-                    <div id="container" class="todos">
+                    <div id="container">
 
                         <% for(var i = 0; i < produtos.length; i++) { %>
 
-                            <div class="card border-0" style="max-width: 16rem;">
+                            <div id=<%= produtos[i].categoria %> class="card border-0" style="max-width: 16rem;">
                                 <img class="card-img-top" onclick="abreImg()" src=<%= produtos[i].imagem %> />
                                 <div class="card-body">
                                   <p class="card-text border-bottom"><%= produtos[i].descricao %></p>
@@ -79,7 +79,7 @@
             </div>
         </section>
 
-        <footer>
+        <footer class="mt-4">
             <div class="container">
                 <div class="row">
 

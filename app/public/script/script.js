@@ -10,39 +10,39 @@ function mudaEstilo() {
     })
 }
 
-function mudaEstilo2() {
-    let li = event.target
+function exibirCategoria(e, categoria) {
 
-    li.addEventListener("mouseenter", function() {
-        li.style.backgroundColor = '#7575a3'
-        li.style.color = 'white'
-        li.style.textDecoration = 'underline'
-        li.style.lineHeight = '30px'
-        li.style.borderRadius = '10px'
-    })
+    // Exibição de produtos conforme a categoria de produtos escolhida na lista
+    let produtos = document.querySelectorAll('div#computadores, div#notebooks, div#videogames, div#acessorios')
 
-    li.addEventListener("mouseout", function() {
-        li.style.backgroundColor = 'white'
-        li.style.color = 'black'
-        li.style.textDecoration = 'none'
-        li.style.lineHeight = '15px'
-        li.style.borderRadius = '0px'
-    })
-}
+    if(categoria == 'todos') {
+        for(let i = 0; i < produtos.length; i++) {
 
-function exibirCategoria(categoria) {
+            produtos[i].style.display = 'flex'    
+        }
+    } else {
+    
+        for(let i = 0; i < produtos.length; i++) {
 
-    let container = document.querySelectorAll('#container')
-    let elemento = document.querySelector('.'+categoria)
-
-    for(let i = 0; i < container.length; i++) {
-
-        if(container[i] == elemento) {
-            container[i].style.display = 'flex'
-        } else {
-            container[i].style.display = 'none'
+            if(produtos[i].id == categoria) {
+                produtos[i].style.display = 'flex'
+            } else {
+                produtos[i].style.display = 'none'
+            }
         }
     }
+
+    // Destaque na lista de categoria escolhida
+    let listas = document.querySelectorAll('#listaCategoria li')
+
+    for (let j = 0; j < listas.length; j++) {
+        listas[j].style.backgroundColor = 'white'
+        listas[j].style.color = 'black'
+    } 
+
+    let lista = e.target
+    lista.style.backgroundColor = '#1a75ff'
+    lista.style.color = 'white'
 }
 
 function abreImg() {

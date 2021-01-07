@@ -147,3 +147,10 @@ footer ul {
     height: 50%;
     margin: auto;
 }
+
+/* Página de cadastro */
+
+.form-group {
+    width: 75%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

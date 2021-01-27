@@ -154,3 +154,8 @@ footer ul {
     width: 75%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+.titulo-cadastro {
+    border-top: 1px solid purple;
+    border-bottom: 1px solid purple;
+}

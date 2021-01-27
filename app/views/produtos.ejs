@@ -71,8 +71,9 @@
                                 <img class="card-img-top" onclick="abreImg()" src=<%= produtos[i].imagem %> />
                                 <div class="card-body">
                                   <p class="card-text border-bottom"><%= produtos[i].descricao %></p>
-                                  <p><del><%= produtos[i].preco %></del></p>
-                                  <p class="preco_descontado"><%= produtos[i].preco_venda %></p>
+                                  <p><del>R$ <%= produtos[i].preco %></del></p>
+                                  <p class="preco_descontado">R$ <%= produtos[i].preco_venda %></p>
+                                  <a class="btn btn-success" href="#">Comprar</a>
                                 </div>
                             </div>
             
